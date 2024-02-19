@@ -1,0 +1,66 @@
+<h1>User Form</h1>
+<div class="container">
+  <div><h2>user details</h2></div>
+  <form #userform="ngForm">
+    <label for="name">Name:</label>
+    <input
+      type="text"
+      name="name"
+      [(ngModel)]="userObj.name"
+      class="form-control"
+    /><br /><br />
+
+    <label for="email">Email:</label>
+    <input
+      type="email"
+      name="email"
+      [(ngModel)]="userObj.email"
+      class="form-control"
+    /><br /><br />
+
+    <label for="age">Age:</label>
+    <input
+      type="number"
+      name="age"
+      [(ngModel)]="userObj.age"
+      class="form-control"
+    /><br /><br />
+
+    <label for="Mobile">Mobile:</label>
+    <input
+      type="number"
+      name="Mobile"
+      [(ngModel)]="userObj.Mobile"
+      class="form-control"
+    /><br /><br />
+
+    <label for="city">city:</label>
+    <input
+      type="text"
+      name="city"
+      [(ngModel)]="userObj.city"
+      class="form-control"
+    /><br /><br />
+
+    <button
+      type="submit"
+      class="button"
+      *ngIf="currentId == 0"
+      (click)="Add(userform.value)"
+    >
+      Add</button
+    ><br />
+
+    <button
+      type="submit"
+      class="button1"
+      *ngIf="currentId !== 0"
+      (click)="updateData(userform.value)"
+    >
+      Update
+    </button>
+    <span class="button-space"></span>
+    <button type="reset" class="button">Reset</button> <br />
+    <a routerLink="/list">DataList</a>
+  </form>
+</div>
